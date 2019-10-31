@@ -34,8 +34,8 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection Error:'));
 
 db.once('open', () => {
-  app.listen(9000, () => {
-    console.log('Node server running on port 9000');
+  app.listen(8000, () => {
+    console.log('Node server running on port 8000');
   });
 
   const msgCollection = db.collection('msgs');
