@@ -240,9 +240,22 @@ At this point, our chat application has the following messages:
 ![image](https://user-images.githubusercontent.com/26818010/67929301-e79caa80-fbb4-11e9-9781-9b3a7e8aed8a.png)
 
 
-### 9. Shutdown VPS with primary mongodb instance!
+### 9, 10. Shutdown VPS with primary mongodb instance! And repeat step 6, 7, 8.
+Now we shutdown the instance which was serving as primary for our mongodb. Then we repeat the steps 6, 7 and 8.
 
-Testing again (with Primary VPS disabled):
+> Step 6 again: Filling with new data (see chat app screenshot below)
+
+> Step 7 again: Output of commands
+- [x] **rs.status()** output now
+```
+```
+
+- [x] **rs.config()** output now
+```
+```
+
+
+> Step 8 again: Screenshot of most recent messages (with Primary VPS disabled)
 ![image](https://user-images.githubusercontent.com/26818010/67929341-000cc500-fbb5-11e9-8cdd-b9e9d2046e77.png)
 
 
