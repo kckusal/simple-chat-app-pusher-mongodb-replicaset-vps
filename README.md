@@ -24,16 +24,21 @@ This repository contains the files for this web application. It is a simple Reac
 
 Note that we also leverage the [**pusher**](https://pusher.com/) technology available for free to make real-time updates in our application.
 
+Pusher App: Based on [USING MONGODB AS A REALTIME DATABASE WITH CHANGE STREAMS, Pusher Blog](https://pusher.com/tutorials/mongodb-change-streams)
+
+![image](https://user-images.githubusercontent.com/26818010/67929844-47478580-fbb6-11e9-8d3f-65a4988d8f08.png)
+![image](https://user-images.githubusercontent.com/26818010/67929938-8544a980-fbb6-11e9-8ca7-ba215abc5528.png)
+
 
 ### 6. Fill database with spam a little bit;
 We filled the database with some random chat texts. See the step 8 below.
 
 ### 7. Put output of rs.status() and rs.config() to README.md file;
-**rs.status()**
+**rs.status()** below at this point:
 ```
-> myReplSet:SECONDARY> rs.status()
-> {
->        "set" : "myReplSet",
+myReplSet:SECONDARY> rs.status()
+{
+        "set" : "myReplSet",
         "date" : ISODate("2019-10-31T07:46:57.013Z"),
         "myState" : 2,
         "term" : NumberLong(2),
@@ -160,18 +165,84 @@ We filled the database with some random chat texts. See the step 8 below.
 }
 ```
 
-### 8. Put a screenshot of your application with most recent messages to README.md;
+**rs.config()** below at this point:
+```
+myReplSet:SECONDARY> rs.config()
+{
+        "_id" : "myReplSet",
+        "version" : 1,
+        "protocolVersion" : NumberLong(1),
+        "writeConcernMajorityJournalDefault" : true,
+        "members" : [
+                {
+                        "_id" : 0,
+                        "host" : "vps1:27017",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
 
-First Test:
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                },
+                {
+                        "_id" : 1,
+                        "host" : "vps2:27017",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
+
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                },
+                {
+                        "_id" : 2,
+                        "host" : "vps3:27017",
+                        "arbiterOnly" : false,
+                        "buildIndexes" : true,
+                        "hidden" : false,
+                        "priority" : 1,
+                        "tags" : {
+
+                        },
+                        "slaveDelay" : NumberLong(0),
+                        "votes" : 1
+                }
+        ],
+        "settings" : {
+                "chainingAllowed" : true,
+                "heartbeatIntervalMillis" : 2000,
+                "heartbeatTimeoutSecs" : 10,
+                "electionTimeoutMillis" : 10000,
+                "catchUpTimeoutMillis" : -1,
+                "catchUpTakeoverDelayMillis" : 30000,
+                "getLastErrorModes" : {
+
+                },
+                "getLastErrorDefaults" : {
+                        "w" : 1,
+                        "wtimeout" : 0
+                },
+                "replicaSetId" : ObjectId("5db9e7356c259daeb8e7e975")
+        }
+}
+
+```
+
+
+### 8. Put a screenshot of your application with most recent messages to README.md;
+At this point, our chat application has the following messages:
 ![image](https://user-images.githubusercontent.com/26818010/67929301-e79caa80-fbb4-11e9-9781-9b3a7e8aed8a.png)
+
+
+### 9. Shutdown VPS with primary mongodb instance!
 
 Testing again (with Primary VPS disabled):
 ![image](https://user-images.githubusercontent.com/26818010/67929341-000cc500-fbb5-11e9-8cdd-b9e9d2046e77.png)
 
 
-Pusher App:
-Based on: [USING MONGODB AS A REALTIME DATABASE WITH CHANGE STREAMS, Pusher Blog](https://pusher.com/tutorials/mongodb-change-streams)
-
-![image](https://user-images.githubusercontent.com/26818010/67929844-47478580-fbb6-11e9-8d3f-65a4988d8f08.png)
-
-![image](https://user-images.githubusercontent.com/26818010/67929938-8544a980-fbb6-11e9-8ca7-ba215abc5528.png)
