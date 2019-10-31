@@ -30,6 +30,7 @@ We filled the database with some random chat texts. See the step 8 below.
 
 ### 7. Put output of rs.status() and rs.config() to README.md file;
 **rs.status()**
+```
 > myReplSet:SECONDARY> rs.status()
 > {
 >        "set" : "myReplSet",
@@ -157,6 +158,7 @@ We filled the database with some random chat texts. See the step 8 below.
         },
         "operationTime" : Timestamp(1572508014, 1)
 }
+```
 
 ### 8. Put a screenshot of your application with most recent messages to README.md;
 
