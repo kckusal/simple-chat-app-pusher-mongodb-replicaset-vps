@@ -472,4 +472,5 @@ myReplSet:PRIMARY> rs.config()
 
 ![image](https://user-images.githubusercontent.com/26818010/67929341-000cc500-fbb5-11e9-8cdd-b9e9d2046e77.png)
 
-
+### 11. Shutdown all VPS instances.
+At this point, our task is complete, so we shutdown all VPS instances.
