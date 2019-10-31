@@ -4,16 +4,16 @@
 
 This file documents the result of step-by-step execution of assigment description.
 
-1. ### Create 3 VPS, install Mongodb on each of them
+### 1. Create 3 VPS, install Mongodb on each of them
 I created 3 AWS instances, each running an Ubuntu 18.04 image. After creating them, I SSHed into them individually and installed MongoDb on each of them.
 
-2. ### Configure internal network between VPS, create “domain names” for each VPS in created network via /etc/hosts file
+### 2. Configure internal network between VPS, create “domain names” for each VPS in created network via /etc/hosts file
 To ensure that traffic can pass through these instances, I made sure during launching those instances that they all had same **VPC ID** and **Subnet ID**. I also made a new security group allowing all traffic temporarily and assigned it to these instances.
 
 Each of the three instances was then given a logical domain name and alias by appending a new line in their /etc/hosts file. Example, first instance was given *vps1.local* as domain name and *vps1* as alias; other instances were alias *vps2* and *vps3* accordingly.
 
 
-3. ### Configure each mongodb to listen on corresponding interface /etc/mongod.conf
+### 3. Configure each mongodb to listen on corresponding interface /etc/mongod.conf
 
 
 First Test:
